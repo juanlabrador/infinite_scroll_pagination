@@ -110,6 +110,11 @@ class PagingController<PageKeyType, ItemType>
     );
   }
 
+  void reset() {
+    itemList = null;
+    notifyListeners();
+  }
+
   /// Appends [newItems] to the previously loaded ones and sets the next page
   /// key to `null`.
   void appendLastPage(List<ItemType> newItems) => appendPage(newItems, null);
