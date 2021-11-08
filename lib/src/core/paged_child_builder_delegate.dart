@@ -19,6 +19,8 @@ class PagedChildBuilderDelegate<ItemType> {
     this.newPageProgressIndicatorBuilder,
     this.noItemsFoundIndicatorBuilder,
     this.noMoreItemsIndicatorBuilder,
+    this.animateTransitions = false,
+    this.transitionDuration = const Duration(milliseconds: 250),
   });
 
   /// The builder for list items.
@@ -41,4 +43,10 @@ class PagedChildBuilderDelegate<ItemType> {
 
   /// The builder for an indicator that all items have been fetched.
   final WidgetBuilder? noMoreItemsIndicatorBuilder;
+
+  /// Whether status transitions should be animated.
+  final bool animateTransitions;
+
+  /// The duration of animated transitions when [animateTransitions] is `true`.
+  final Duration transitionDuration;
 }
